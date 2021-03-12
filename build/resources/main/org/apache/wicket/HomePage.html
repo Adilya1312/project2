@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Кредитный калькулятор</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        #grad {
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 100%)
+        }
+        h1 {
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        .grad input{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="grad">
+    <h1>Кредитный калькулятор</h1>
+    <form wicket:id="form">
+         <label m="dd"> День/месяц/год: </label>
+         <input wicket:id="day" type="text" size="10" align="right" />
+
+        <input wicket:id="month" type="text" size="10" />
+
+        <input wicket:id="year" type="text"  size="10"/><br/>
+        <label m="first"> Срок кредита в месяцах: </label>
+        <input wicket:id="months" type="text" size="10" /><br/>
+        <label m="second"> Сумма кредита: </label>
+        <input wicket:id="amount" type="text" size="10" /><br/>
+        <label m="third"> Процентная ставка: </label>
+        <input wicket:id="percent" type="text" size="10" /><br/>
+        <input wicket:id="result" type="submit" value="Посчитать"/>
+        <input wicket:id="erase" type="submit" value="Очистить"/>
+
+    </form>
+
+    <table >
+        <th> №</th>
+        <th> Дата платежа </th>
+        <th> Количество дней </th>
+        <th> Сумма погашения ОД </th>
+        <th> Начисленные проценты </th>
+        <th> Остаток ОД </th>
+        <th> Сумма платежа </th>
+
+        <tr wicket:id="listview">
+            <td style="text-align: center" ><span wicket:id="order"> </span></td>
+            <td style="text-align: center"><span wicket:id="date"> </span></td>
+            <td style="text-align: center"><span wicket:id="numOfDays"> </span></td>
+            <td style="text-align: center"><span wicket:id="amountPerMonth"> </span></td>
+            <td style="text-align: center"><span wicket:id="percentPerMonth"> </span></td>
+            <td style="text-align: center"><span wicket:id="left"></span> </td>
+            <td style="text-align: center"><span wicket:id="totalPerMonth"> </span></td>
+        </tr>
+    </table>
+    </div>
+
+</body>
+</html>
